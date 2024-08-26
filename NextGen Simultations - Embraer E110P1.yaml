@@ -1,0 +1,544 @@
+# Version 1.0
+
+include:
+  - definitions/modules/Instruments/AS_GNS530.yaml
+  - definitions/modules/Instruments/PMS50_GTN.yaml
+  - definitions/modules/controls.yaml
+  - definitions/modules/deice.yaml
+  - definitions/modules/electrical.yaml
+  - definitions/modules/engines.yaml
+  - definitions/modules/fuel.yaml
+  - definitions/modules/general.yaml
+  - definitions/modules/handling.yaml
+  - definitions/modules/lights.yaml
+  - definitions/modules/navigation.yaml
+  - definitions/modules/radios.yaml
+  - definitions/modules/safety.yaml
+  - definitions/modules/transponder.yaml
+  - definitions/modules/trim.yaml
+  - definitions/modules/commonlvars.yaml
+  - definitions/modules/autopilot.yaml
+
+shared:
+  -  # LVAR's 
+    type: var
+    var_name: L:EMB110 BATTERY SWITCH POSITION
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_LIgnitionSwitch
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_AnticollisionLightSwitchPos
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_LIgnitionIndicator
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_RIgnitionIndicator
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_RIgnitionSwitch
+  -
+    type: var
+    var_name: L:EMB110 ELEC LEFT INVERTER
+  -
+    type: var
+    var_name: L:EMB110 ELEC RIGHT INVERTER
+  -
+    type: var
+    var_name: L:EMB110 PAXCABIN LIGHTS SWITCH POSITION
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_PaxHeat
+  -
+    type: var
+    var_name: L:EMB110 WIPER L POWER SETTING
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_WiperLSpeedFast
+  -
+    type: var
+    var_name: L:EMB110 WIPER R POWER SETTING
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_WiperRSpeedFast
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_EngineAntiIceInlet
+  -
+    type: var
+    var_name: L:EMB110 BATTERY TEMPERATURE TEST
+  -
+    type: var
+    var_name: L:EMB110 FIRE HORN CUTOUT
+  -
+    type: var
+    var_name: L:KNI582 PILOT RMI PTR1 ADFMODE
+  -
+    type: var
+    var_name: L:KNI582 PILOT RMI PTR2 ADFMODE
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_LTcasDisplayBrightness
+  -
+    type: var
+    var_name: L:EMB110 EMER LIGHTS SWITCH POSITION
+  -
+    type: var
+    var_name: L:EMB110 HYD BOOST SWITCH
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_MainFuelPumpL
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_MainFuelPumpR
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_AuxFuelPumpL
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_AuxFuelPumpR
+  -
+    type: var
+    var_name: L:EMB110 ANNUNCIATORS TEST
+  -
+    type: var
+    var_name: L:EMB110 ANNUNCIATORS ARE DIMMED
+  -
+    type: var
+    var_name: L:EMB110 ELT SWITCH ON
+  -
+    type: var
+    var_name: L:EMB110 HOTMIC SWITCH ON
+  -
+    type: var
+    var_name: L:EMB110 AC SHUTOFF LEFT SWITCH
+  -
+    type: var
+    var_name: L:EMB110 AC SHUTOFF RIGHT SWITCH
+  -
+    type: var
+    var_name: L:EMB110 AC VENT SWITCH
+  -
+    type: var
+    var_name: L:EMB110 AC WARMCOOL SWITCH
+  -
+    type: var
+    var_name: L:EMB110 AC WARMCOOL MANOVRD SWITCH
+  -
+    type: var
+    var_name: L:EMB110 AC WARMCOOL TEMP KNOB POS
+  -
+    type: var
+    var_name: L:EMB110 AC DEFOG SWITCH
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_FuelCrossfeedSwitchState
+  -
+    type: var
+    var_name: L:KNI582 COPILOT RMI PTR1 ADFMODE
+  -
+    type: var
+    var_name: L:KNI582 COPILOT RMI PTR2 ADFMODE
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_RTcasDisplayBrightness
+  -
+    type: var
+    var_name: L:XMLVAR_RDR2000_ScreenBrightness
+  -
+    type: var
+    var_name: L:XMLVAR_RDR2000_IsWxAEnabled
+  -
+    type: var
+    var_name: L:XMLVAR_RDR2000_SelectedMode
+  -
+    type: var
+    var_name: L:XMLVAR_RDR2000_Gain
+  -
+    type: var
+    var_name: L:XMLVAR_RDR2000_Tilt
+  -
+    type: var
+    var_name: L:XMLVAR_RDR2000_Range
+  -
+    type: var
+    var_name: L:XMLVAR_RDR2000_SelectedSource
+  -
+    type: var
+    var_name: L:XMLVAR_RDR2000_ScreenLuminosity
+  -
+    type: var
+    var_name: L:EMB110 FIRE TEST
+  -
+    type: var
+    var_name: L:EMB110 ENG2 FIRE SHUTOFF
+  -
+    type: var
+    var_name: L:EMB110 ENG1 FIRE SHUTOFF
+  -
+    type: var
+    var_name: L:EMB110 ENG1 FIRE BOTTLE PULL
+  -
+    type: var
+    var_name: L:EMB110 ENG2 FIRE BOTTLE PULL
+  -
+    type: var
+    var_name: L:XMLVAR_AudioPanel_AUX
+  -
+    type: var
+    var_name: L:XMLVARS_KMC321_APTest
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_RampReadyOnCD
+  -
+    type: var
+    var_name: L:NGS XMLVARS RAMPMGR CHOCKS
+  -
+    type: var
+    var_name: L:NGS XMLVARS RAMPMGR CONES
+  -
+    type: var
+    var_name: L:NGS XMLVARS RAMPMGR ENGCOVERS
+  -
+    type: var
+    var_name: L:NGS XMLVARS RAMPMGR PITOTCOVERS
+  -
+    type: var
+    var_name: L:NGS XMLVARS RAMPMGR TAILROD
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_SelectedGPS
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_GPSGovernsCDI2
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_XPDRAutoON
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_DMEPadZeroes
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_AllowYDEngageOnGnd
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_RampReadyOnCD
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_PlayPaxSignsSound
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_EFB_TimeFormat
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_EFB_TimeMode
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_EFB_ShowClockSecs
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_AllowADFDecimals
+  -
+    type: var
+    var_name: L:EMB110_EFB_State
+  -
+    type: var
+    var_name: L:EMB110_EFB_ScreenLuminosity
+  -
+    type: var
+    var_name: L:XMLVARS_NGSE110_IsEFBVisible
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_EFBIsPoweredOn
+  -
+    type: var
+    var_name: L:XMLVAR_NGSE110_EFB_ShowOnFlightStart
+  -
+    type: var
+    var_name: L:EMB110P1 CARGO DOOR OPEN
+  -
+    type: var
+    var_name: L:EMB110P1 MAIN DOOR OPEN
+  -
+    type: var
+    var_name: L:KPI553A PILOT CRS KNOB
+  -
+    type: var
+    var_name: L:KPI553A PILOT HDG KNOB
+  -
+    type: var
+    var_name: L:KPI553A PILOT BRG MODE
+  -
+    type: var
+    var_name: L:KEA346 PILOT BARO KNOB
+  -
+    type: var
+    var_name: L:KEA346 COPILOT BARO KNOB
+  -
+    type: var
+    var_name: L:EMB110 BATTERY TEMPERATURE
+  -
+    type: var
+    var_name: L:XMLVAR_KAS297C_OuterKnob
+  -
+    type: var
+    var_name: L:XMLVAR_KAS297C_InnerKnob
+  -
+    type: var
+    var_name: L:EMB110 CABIN TEMPERATURE CELSIUS
+  -
+    type: var
+    var_name: L:KAS297C_ScreenLuminosity
+  -
+    type: var
+    var_name: L:KAS297C_State
+  -
+    type: var
+    var_name: L:PFD_CDI_Source
+
+
+  - # AVAR's
+    type: ToggleSwitch
+    var_name: A:GENERAL ENG STARTER ACTIVE:1
+    var_units: Bool
+    var_type: bool
+    event_name: TOGGLE_STARTER1
+  - 
+    type: ToggleSwitch
+    var_name: A:GENERAL ENG STARTER ACTIVE:2
+    var_units: Bool
+    var_type: bool
+    event_name: TOGGLE_STARTER2
+  - 
+    type: ToggleSwitch
+    var_name: A:ENG ANTI ICE:1
+    var_units: Bool
+    var_type: bool
+    event_name: ANTI_ICE_TOGGLE_ENG1
+  - 
+    type: ToggleSwitch
+    var_name: A:ENG ANTI ICE:2
+    var_units: Bool
+    var_type: bool
+    event_name: ANTI_ICE_TOGGLE_ENG2
+  - 
+    type: ToggleSwitch
+    var_name: A:LIGHT CABIN:1
+    var_units: Bool
+    var_type: bool
+    event_name: TOGGLE_CABIN_LIGHTS
+  - 
+    type: ToggleSwitch
+    var_name: A:LIGHT PANEL:1
+    var_units: Bool
+    var_type: bool
+    event_name: PANEL_LIGHTS_TOGGLE
+  - 
+    type: ToggleSwitch
+    var_name: A:CABIN SEATBELTS ALERT SWITCH
+    var_units: Bool
+    var_type: bool
+    event_name: CABIN_SEATBELTS_ALERT_SWITCH_TOGGLE
+  - 
+    type: ToggleSwitch
+    var_name: A:CABIN NO SMOKING ALERT SWITCH
+    var_units: Bool
+    var_type: bool
+    event_name: CABIN_NO_SMOKING_ALERT_SWITCH_TOGGLE
+  - 
+    type: ToggleSwitch
+    var_name: A:PITOT HEAT
+    var_units: Bool
+    var_type: bool
+    event_name: PITOT_HEAT_TOGGLE
+  -
+    type: ToggleSwitch
+    var_name: A:AUTOPILOT MASTER
+    var_units: Bool
+    var_type: bool
+    event_name: AP_MASTER
+  -
+    type: NumSet
+    var_name: A:LIGHT POTENTIOMETER:2
+    var_units: Percent
+    var_type: f64
+    event_name: LIGHT_POTENTIOMETER_SET
+    event_param: 2
+    index_reversed: true
+  -
+    type: NumSet
+    var_name: A:LIGHT POTENTIOMETER:3
+    var_units: Percent
+    var_type: f64
+    event_name: LIGHT_POTENTIOMETER_SET
+    event_param: 3
+    index_reversed: true
+  -
+    type: NumSet
+    var_name: A:LIGHT POTENTIOMETER:5
+    var_units: Percent
+    var_type: f64
+    event_name: LIGHT_POTENTIOMETER_SET
+    event_param: 5
+    index_reversed: true
+  -
+    type: NumSet
+    var_name: A:LIGHT POTENTIOMETER:4
+    var_units: Percent
+    var_type: f64
+    event_name: LIGHT_POTENTIOMETER_SET
+    event_param: 4
+    index_reversed: true
+
+server:
+  -
+    type: var
+    var_name: A:FUEL TANK LEFT MAIN LEVEL
+    var_units: Percent
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:FUEL TANK RIGHT MAIN LEVEL
+    var_units: Percent
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:FUEL TANK LEFT AUX LEVEL
+    var_units: Percent
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:FUEL TANK RIGHT AUX LEVEL
+    var_units: Percent
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:1
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:2
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:3
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:4
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:5
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:6
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:7
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:8
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:9
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:10
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:11
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:12
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:13
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:14
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:15
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:16
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:17
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:18
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:19
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:20
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:21
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
